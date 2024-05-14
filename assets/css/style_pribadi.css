@@ -1,0 +1,65 @@
+.card.pulsa_mobile_1{
+    height: 200px !important; 
+}
+
+p.pulsa_mobile_3{
+    width: 125px;
+    font-size: 12px;
+}
+
+p.pulsa_mobile_3_special{
+    width: 110px !important;
+    font-size: 12px;
+}
+
+#kt_app_footer{
+    display: none;
+}
+
+#kt_app_footer .app-container{
+    border-radius: 10px 10px 0px 0px;
+    background-color: rgba(42, 65, 196, .8);
+    backdrop-filter: blur(15px);
+}
+
+#more {display: none;}
+
+@media only screen and (max-width: 600px) {
+    a.btn.btn-ppob{
+        padding: 10px 0px !important;
+    }
+
+    .card.pulsa_mobile_1{
+        height: 175px !important;
+        width: 340px !important;
+    }
+
+    .row.pulsa_mobile{
+        padding: 0px;
+        margin-bottom: 75px;
+    }
+
+    .card .card-body.pulsa_mobile{
+        padding: 0px 15px;
+    }
+
+    img.logo_pulsa{
+        width: 65px;
+    }
+    
+    .card .card-footer.pulsa_mobile{
+        padding: 0px;
+    }
+
+    .card.beranda_mobile, .card.convert_mobile, .card.penarikan_mobile, .card.profile_mobile{
+        width: 340px !important;
+    }
+
+    #kt_sidebar{
+        display: none !important;
+    }
+
+    #kt_app_footer{
+        display: block;
+    }
+}
