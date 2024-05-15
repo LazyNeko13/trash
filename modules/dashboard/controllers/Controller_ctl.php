@@ -13,8 +13,11 @@ class Controller_ctl extends MY_Themes
     }
 
 
-     public function index()
+    public function index()
     {
+        if (!in_array($this->id_role,[1,2])) {
+            redirect('penukaran');
+        }
         $mydata = [];
         $where = [];
         // GLOBAL VARIABEL

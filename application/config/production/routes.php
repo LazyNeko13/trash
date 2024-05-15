@@ -133,20 +133,20 @@ $route['func_auth/(:any)/(:any)'] = 'auth/function_ctl/$1/$2';
 
 
 
-if (in_array($_SESSION['trash_id_role'],[1,2])) {
+// if (isset($_SESSION['trash_id_role']) && in_array($_SESSION['trash_id_role'],[1,2])) {
     $route['dashboard']  = 'dashboard/controller_ctl';
 
     $route['dashboard/(:any)'] = 'dashboard/controller_ctl/$1';
 
     $route['dashboard/(:any)/(:any)'] = 'dashboard/controller_ctl/$1/$2';
 
-}else{
-    $route['dashboard']  = 'dashboard/controller_ctl/penukaran';
+// }else{
+//     $route['dashboard']  = 'dashboard/controller_ctl/penukaran';
 
-    $route['dashboard/(:any)'] = 'dashboard/controller_ctl/penukaran/$1';
+//     $route['dashboard/(:any)'] = 'dashboard/controller_ctl/penukaran/$1';
 
-    $route['dashboard/(:any)/(:any)'] = 'dashboard/controller_ctl/penukaran/$1/$2';
-}
+//     $route['dashboard/(:any)/(:any)'] = 'dashboard/controller_ctl/penukaran/$1/$2';
+// }
 
 $route['penukaran']  = 'dashboard/controller_ctl/penukaran';
 

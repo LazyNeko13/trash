@@ -203,7 +203,7 @@
                             <?php endif;?>
 
                             <?php if($this->session->userdata('trash_id_role') == 3) : ?>
-                                <input type="hidden" name="id_agen" value="<?= $id_agen; ?>">
+                                <input type="hidden" name="id_agen" value="<?= (isset($id_agen)) ? $id_agen : ''; ?>">
                                 <input type="hidden" name="id_penerima" value="<?= $this->session->userdata('trash_id_user'); ?>">
                             <?php endif;?>
                             <!--begin::Input group-->
@@ -220,7 +220,7 @@
                                             <?php foreach($user AS $row) : ?>
                                                 <option value="<?= $row->id_user;?>">
                                                     <?= $row->nama; ?>
-                                                    <?php if($row->block == 'Y') : ?>
+                                                    <?php if($row->status == 'N') : ?>
                                                         (Di Blockir)
                                                     <?php endif;?>
                                                 </option>

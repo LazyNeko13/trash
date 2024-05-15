@@ -100,7 +100,7 @@
                             <!--begin:Menu item-->
                             <a href="<?= base_url('dashboard'); ?>" class="menu-item here show menu-accordion">
                                 <!--begin:Menu link-->
-                                <span class="menu-link <?= set_menu_active($this->uri->segment(1), ['dashboard']) ?>">
+                                <span class="menu-link <?= (in_array($this->session->userdata('trash_id_role'),[1,2])) ? set_menu_active($this->uri->segment(1), ['dashboard']) : set_menu_active($this->uri->segment(1), ['penukaran']); ?>">
                                     <span class="menu-icon">
                                         <i class="ki-outline ki-home-2 fs-2"></i>
                                     </span>
