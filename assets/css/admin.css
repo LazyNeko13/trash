@@ -34491,14 +34491,14 @@ fieldset:disabled .btn {
     --bs-gray-900: #181c32;
     --bs-gray-900-rgb: 24, 28, 50;
     --bs-light: #f9f9f9;
-    --bs-primary: #3C4BB6;
+    --bs-primary: #a3d78b;
     --bs-secondary: #e1e3ea;
     --bs-success: #3e97ff;
     --bs-info: #7239ea;
     --bs-warning: #ffc700;
     --bs-danger: #f1416c;
     --bs-dark: #181c32;
-    --bs-primary-active: #3C4BB6;
+    --bs-primary-active: #a3d78b;
     --bs-secondary-active: #b5b5c3;
     --bs-light-active: #f4f4f4;
     --bs-success-active: #2884ef;
@@ -34530,7 +34530,7 @@ fieldset:disabled .btn {
     --bs-danger-rgb: 241, 65, 108;
     --bs-dark-rgb: 24, 28, 50;
     --bs-text-white: #ffffff;
-    --bs-text-primary: #252E6F;
+    --bs-text-primary: #a3d78b;
     --bs-text-secondary: #e1e3ea;
     --bs-text-light: #f9f9f9;
     --bs-text-success: #3e97ff;

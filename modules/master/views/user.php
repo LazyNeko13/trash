@@ -46,7 +46,7 @@
                             <!--begin::Toolbar-->
                             <div class="d-none justify-content-end" id="sistem_drag">
                                 <button type="button" id="btn_hapus" onclick="submit_form(this,'#reload_table',0,'/deleted',true,true)" data-message="Apakah anda yakin akan menghapus data user? data yang di hapus tidak akan bisa di kembalikan" class="btn btn-sm btn-light-danger me-3">Hapus</button>
-                                <button type="button" id="btn_block" onclick="submit_form(this,'#reload_table',0,'/block',true)" class="btn btn-sm btn-light-warning me-3">Block</button>
+                                <button type="button" id="btn_block" onclick="submit_form(this,'#reload_table',0,'/block',true)" class="btn btn-sm btn-light-primary me-3">Block</button>
                                 <button type="button" id="btn_unblock" onclick="submit_form(this,'#reload_table',0,'/unblock',true)" class="btn btn-sm btn-light-primary me-3">Buka Blockir</button>
                             </div>
                             <div class="d-flex justify-content-end" id="sistem_filter">
@@ -183,8 +183,8 @@
                                                         $url = 'master_function/block_user/user';
                                                         ?>
                                                         <input class="form-check-input cursor-pointer focus-green" type="checkbox" role="switch" onchange="switch_block(this,event,<?= $row->id_user ?>)" id="switch-<?= $row->id_user ?>" <?php if ($row->status == 'Y') {
-                                                                                                                                                                                                                                                    echo 'checked';
-                                                                                                                                                                                                                                                } ?>>
+                                                                                                                                                                                                                                                echo 'checked';
+                                                                                                                                                                                                                                            } ?>>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -237,7 +237,7 @@
                 <form id="form_user" class="form" action="<?= base_url('master_function/tambah_user') ?>" method="POST" enctype="multipart/form-data">
                     <!--begin::Scroll-->
                     <div class="d-flex flex-column scroll-y me-n7 pe-7" id="#" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_user_header" data-kt-scroll-wrappers="#kt_modal_user_scroll" data-kt-scroll-offset="300px">
-                        
+
                         <div id="lead"></div>
                         <!--begin::Input group-->
                         <div class="fv-row mb-7" id="req_nama">
@@ -260,7 +260,7 @@
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
-                    
+
 
                         <!--begin::Input group-->
                         <div class="fv-row mb-7" id="req_role">

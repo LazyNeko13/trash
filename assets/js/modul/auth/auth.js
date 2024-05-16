@@ -39,7 +39,7 @@ var KTSigninGeneral = function () {
                         buttonsStyling: !1,
                         confirmButtonText: "ok",
                         customClass: {
-                            confirmButton: "btn btn-warning"
+                            confirmButton: "btn btn-primary"
                         }
                     })
                 }))
@@ -84,7 +84,7 @@ function login_proses(button, form) {
                     buttonsStyling: !1,
                     confirmButtonText: "Lanjutkan",
                     customClass: {
-                        confirmButton: "btn btn-warning"
+                        confirmButton: "btn btn-primary"
                     }
                 }).then((function (t) {
                     if (t.isConfirmed) {
@@ -101,7 +101,7 @@ function login_proses(button, form) {
                     buttonsStyling: !1,
                     confirmButtonText: "Lanjutkan",
                     customClass: {
-                        confirmButton: "btn btn-warning"
+                        confirmButton: "btn btn-primary"
                     }
                 })
             }

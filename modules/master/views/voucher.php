@@ -46,7 +46,7 @@
                             <!--begin::Toolbar-->
                             <div class="d-none justify-content-end" id="sistem_drag">
                                 <button type="button" id="btn_hapus" onclick="submit_form(this,'#reload_table',0,'/deleted',true,true)" data-message="Apakah anda yakin akan menghapus data voucher? data yang di hapus tidak akan bisa di kembalikan" class="btn btn-sm btn-light-danger me-3">Hapus</button>
-                                <button type="button" id="btn_block" onclick="submit_form(this,'#reload_table',0,'/block',true)" class="btn btn-sm btn-light-warning me-3">Block</button>
+                                <button type="button" id="btn_block" onclick="submit_form(this,'#reload_table',0,'/block',true)" class="btn btn-sm btn-light-primary me-3">Block</button>
                                 <button type="button" id="btn_unblock" onclick="submit_form(this,'#reload_table',0,'/unblock',true)" class="btn btn-sm btn-light-primary me-3">Buka Blockir</button>
                             </div>
                             <div class="d-flex justify-content-end" id="sistem_filter">
@@ -144,7 +144,8 @@
                                                     <div class="d-flex align-items-center">
                                                         <div class="d-flex justify-content-start flex-column">
                                                             <a class="text-dark fw-bold text-hover-primary fs-6"><?= ifnull($row->nama, 'Dalam proses...') ?></a>
-                                                             <span class="text-muted fw-semibold text-muted d-block fs-7">Poin : <?= price_format($row->poin) ?></span>
+                                                            <span class="text-muted fw-semibold text-muted d-block fs-7">Poin :
+                                                                <?= price_format($row->poin) ?></span>
                                                         </div>
                                                     </div>
                                                 </td>
@@ -163,8 +164,8 @@
                                                         $url = 'master_function/block_voucher/voucher';
                                                         ?>
                                                         <input class="form-check-input cursor-pointer focus-green" type="checkbox" role="switch" onchange="switch_block(this,event,<?= $row->id_voucher ?>)" id="switch-<?= $row->id_voucher ?>" <?php if ($row->status == 'Y') {
-                                                                                                                                                                                                                                                    echo 'checked';
-                                                                                                                                                                                                                                                } ?>>
+                                                                                                                                                                                                                                                        echo 'checked';
+                                                                                                                                                                                                                                                    } ?>>
                                                     </div>
                                                 </td>
                                                 <td>
@@ -217,7 +218,7 @@
                 <form id="form_voucher" class="form" action="<?= base_url('master_function/tambah_voucher') ?>" method="POST" enctype="multipart/form-data">
                     <!--begin::Scroll-->
                     <div class="d-flex flex-column scroll-y me-n7 pe-7" id="#" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_voucher_header" data-kt-scroll-wrappers="#kt_modal_voucher_scroll" data-kt-scroll-offset="300px">
-                        
+
                         <div id="lead"></div>
                         <!--begin::Input group-->
                         <div class="fv-row mb-7" id="req_nama">
@@ -233,17 +234,17 @@
 
                         <div class="mb-4" id="req_poin">
                             <label for="poin" class="required form-label">Poin</label>
-                            <input id="display_poin" onkeyup="matauang(this,'#poin')" type="text" class="not_important form-control form-control-solid" placeholder="Masukkan poin"/>
+                            <input id="display_poin" onkeyup="matauang(this,'#poin')" type="text" class="not_important form-control form-control-solid" placeholder="Masukkan poin" />
                             <input type="hidden" id="poin" name="poin" class="not_important form-control form-control-solid mb-3 mb-lg-0" autocomplete="off" />
                         </div>
-                        
+
                         <!--begin::Input group-->
                         <div class="fv-row mb-7" id="req_keterangan">
                             <!--begin::Label-->
                             <label class="required fw-semibold fs-6 mb-2">Keterangan</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <textarea name="keterangan" cols="30" rows="10"  class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Masukkan keterangan" autocomplete="off"></textarea>
+                            <textarea name="keterangan" cols="30" rows="10" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Masukkan keterangan" autocomplete="off"></textarea>
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->

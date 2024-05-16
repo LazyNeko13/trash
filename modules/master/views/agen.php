@@ -46,9 +46,9 @@
                             <!--begin::Toolbar-->
                             <div class="d-none justify-content-end" id="sistem_drag">
                                 <button type="button" id="btn_hapus" onclick="submit_form(this,'#reload_table',0,'/deleted',true,true)" data-message="Apakah anda yakin akan menghapus data agen? data yang di hapus tidak akan bisa di kembalikan" class="btn btn-sm btn-light-danger me-3">Hapus</button>
-                                <button type="button" id="btn_block" onclick="submit_form(this,'#reload_table',0,'/block',true)" class="btn btn-sm btn-light-warning me-3">Sembunyikan</button>
+                                <button type="button" id="btn_block" onclick="submit_form(this,'#reload_table',0,'/block',true)" class="btn btn-sm btn-light-primary me-3">Sembunyikan</button>
                                 <button type="button" id="btn_unblock" onclick="submit_form(this,'#reload_table',0,'/unblock',true)" class="btn btn-sm btn-light-primary me-3">Tampilkan</button>
-                               
+
                             </div>
                             <div class="d-flex justify-content-end" id="sistem_filter">
 
@@ -135,7 +135,7 @@
 
                                     <?php if ($result) : ?>
                                         <?php foreach ($result as $row) : ?>
-                                            <tr> 
+                                            <tr>
                                                 <td>
                                                     <div class="form-check form-check-sm form-check-custom form-check-solid">
                                                         <input class="form-check-input widget-9-check cursor-pointer child_checkbox" name="id_batch[]" onchange="child_checked()" type="checkbox" value="<?= $row['id_agen'] ?>">
@@ -144,17 +144,17 @@
                                                 <td>
                                                     <div class="d-flex justify-content-start align-items-start flex-column">
                                                         <a class="text-dark fw-bold text-hover-primary fs-6"><?= ifnull($row['nama'], 'Dalam proses...') ?></a>
-                                                        <span class="text-bold text-dark"><?= ifnull($row['alamat'],'Tidak ada alamat tercantum'); ?></span>
+                                                        <span class="text-bold text-dark"><?= ifnull($row['alamat'], 'Tidak ada alamat tercantum'); ?></span>
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <?php if($row['member']) : ?>
-                                                        <?php foreach($row['member'] AS $key) : ?>
-                                                        <span class="text-dark fw-bold text-muted d-block fs-6"><?= '- '.$key['nama']; ?></span>
-                                                        <?php endforeach;?>
+                                                    <?php if ($row['member']) : ?>
+                                                        <?php foreach ($row['member'] as $key) : ?>
+                                                            <span class="text-dark fw-bold text-muted d-block fs-6"><?= '- ' . $key['nama']; ?></span>
+                                                        <?php endforeach; ?>
                                                     <?php else : ?>
                                                         <span class="text-dark fw-bold text-muted d-block fs-6"> - </span>
-                                                    <?php endif;?>
+                                                    <?php endif; ?>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex justify-content-center align-items-center">
@@ -164,7 +164,7 @@
                                                                                                                                                                                                                                                     } ?>>
                                                         </div>
                                                     </div>
-                                                    
+
                                                 </td>
                                                 <td>
 
@@ -172,7 +172,7 @@
                                                         <button type="button" onclick="map_agen('<?= $row['latitude']; ?>','<?= $row['longitude']; ?>')" class="btn btn-icon btn-bg-light btn-active-color-info btn-sm me-1" title="Lokasi agen" data-bs-toggle="modal" data-bs-target="#kt_modal_lokasi">
                                                             <i class="ki-outline ki-map fs-2"></i>
                                                         </button>
-                                                        <button type="button" title="Tambah pengepul" onclick="tambah_pengepul(this,<?= $row['id_agen']; ?>)" class="btn btn-icon btn-bg-light btn-active-color-warning btn-sm me-1" data-bs-toggle="modal" data-bs-target="#kt_modal_pengepul">
+                                                        <button type="button" title="Tambah pengepul" onclick="tambah_pengepul(this,<?= $row['id_agen']; ?>)" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" data-bs-toggle="modal" data-bs-target="#kt_modal_pengepul">
                                                             <i class="ki-outline ki-user fs-2"></i>
                                                         </button>
                                                         <button type="button" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1" title="Ubah data agen" onclick="edit_agen(this,<?= $row['id_agen']; ?>)" data-bs-toggle="modal" data-bs-target="#kt_modal_agen">
@@ -255,23 +255,23 @@
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
-                        
+
                         <!--begin::Input group-->
                         <div class="fv-row mb-7" id="req_alamat">
                             <!--begin::Label-->
                             <label class="required fw-semibold fs-6 mb-2">Alamat</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <textarea name="alamat" cols="30" rows="10"  class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Masukkan alamat" autocomplete="off"></textarea>
+                            <textarea name="alamat" cols="30" rows="10" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Masukkan alamat" autocomplete="off"></textarea>
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
-                        
+
                     </div>
                     <!--end::Scroll-->
                     <!--begin::Actions-->
                     <div class="text-center pt-15">
-                        <button type="button" id="submit_agen"  onclick="submit_form(this,'#form_agen',1)" class="btn btn-primary">
+                        <button type="button" id="submit_agen" onclick="submit_form(this,'#form_agen',1)" class="btn btn-primary">
                             <span class="indicator-label">Submit</span>
                         </button>
                     </div>
@@ -296,8 +296,8 @@
                 <!--begin::Scroll-->
                 <div class="d-flex flex-column scroll-y me-n7 pe-7" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_agen_header" data-kt-scroll-wrappers="#kt_modal_agen_scroll" data-kt-scroll-offset="300px">
                     <div id="map_agen"></div>
-                   
-                    
+
+
                 </div>
                 <!--end::Scroll-->
             </div>
@@ -326,7 +326,7 @@
             <!--begin::Modal header-->
             <!--begin::Modal body-->
             <div id="display_pengepul"></div>
-            
+
         </div>
         <!--end::Modal content-->
     </div>
